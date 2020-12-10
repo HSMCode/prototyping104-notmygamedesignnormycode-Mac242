@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && Time.time >= nextTimeToFire)
         {
             Instantiate(porjectilePrefab, transform.position, porjectilePrefab.transform.rotation);
-            nextTimeToFire = Time.time + 1.2f;
+            nextTimeToFire = Time.time + .7f;
         }
 
     }
