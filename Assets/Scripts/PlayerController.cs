@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float horizontalInput;
-    public float speed = 10.0f;
+    public float speed = 5.0f;
     public float xRange = 10.0f;
 
     public GameObject porjectilePrefab;
+
+    float nextTimeToFire;
 
     // Start is called before the first frame update
     void Start()
@@ -31,9 +33,11 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Space) && Time.time >= nextTimeToFire)
         {
             Instantiate(porjectilePrefab, transform.position, porjectilePrefab.transform.rotation);
+            nextTimeToFire = Time.time + 1.2f;
         }
+
     }
 }

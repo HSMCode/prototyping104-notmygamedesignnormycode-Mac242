@@ -7,8 +7,8 @@ public class SpawnManager : MonoBehaviour
     public GameObject [] penguinPrefabs;
     private float spawnRangeX = 12;
     private float spawnPosZ = 25;
-    private float startDelay = 1.5f;
-    private float spawnInterval = 1f;
+    private float startDelay = 1f;
+    private float spawnInterval = 2f;
 
     // Start is called before the first frame update
     void Start()
